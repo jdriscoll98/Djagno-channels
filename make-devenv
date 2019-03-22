@@ -34,6 +34,13 @@ if [ "$VIRTUAL_ENV" == "" ]; then
 fi
 echo "Done"
 
+echo "Activating channel layer (docker) ..."
+sudo docker run -p 6379:6379 -d redis:2.8
+if [ "$VIRTUAL_ENV" == "" ]; then
+  exit 1
+fi
+echo "Done"
+
 echo "Upgrading pip ..."
 pip install --upgrade pip
 if [ ! $? -eq 0 ]; then

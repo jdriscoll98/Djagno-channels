@@ -72,6 +72,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'config.wsgi.application'
+# Django Channels settings 
 ASGI_APPLICATION = 'config.routing.application'
 CHANNEL_LAYERS = {
     'default': {
